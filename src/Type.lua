@@ -9,7 +9,7 @@ local Type = Symbol.new("Type")
 local registry = {}
 
 local function createSymbol(name)
-	return Symbol.new(("Type.%s"):format(name))
+	registry[name] = Symbol.new(("Type.%s"):format(name))
 end
 
 createSymbol("Component")
