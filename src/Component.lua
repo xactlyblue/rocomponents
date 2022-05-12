@@ -62,12 +62,12 @@ end
 function Component:cleanup()
 	local internalComponentData = self[InternalComponentData]
 
-	internalComponentData.lifetimePoint = ComponentLifetimePoint.CleaningUp
+	internalComponentData.lifetimePoint = ComponentLifetime.CleaningUp
 
 	self.cache:clear()
 	self:onCleanup()
 
-	internalComponentData.lifetimePoint = ComponentLifetimePoint.Nonexistant
+	internalComponentData.lifetimePoint = ComponentLifetime.Nonexistant
 	return
 end
 
@@ -155,7 +155,7 @@ return {
 		__unbind = function(self, name)
 			local internalComponentData = self[InternalComponentData]
 			
-			internalComponentData.lifetimePoint = ComponentLifetimePoint.Unbinding
+			internalComponentData.lifetimePoint = ComponentLifetime.Unbinding
 			
 			self:onUnbinding()
 			self:cleanup()
