@@ -1,0 +1,12 @@
+{
+  "name": "Rocomponents Testing",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "Rocomponents": {
+        "$path": "src"
+      }
+    }
+  }
+}
