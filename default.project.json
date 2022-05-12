@@ -1,12 +1,6 @@
 {
-  "name": "Rocomponents Testing",
+  "name": "rocomponents",
   "tree": {
-    "$className": "DataModel",
-
-    "ReplicatedStorage": {
-      "Rocomponents": {
-        "$path": "src"
-      }
-    }
+    "$path": "src"
   }
 }
