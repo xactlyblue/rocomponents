@@ -1,9 +1,10 @@
 [package]
 name = "xactlyblue/rocomponents"
-version = "0.0.2"
+version = "0.0.4"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 authors = ["xactlyblue"]
+include = ["src\"]
 exclude = ["default.project.json"]
 
 [dependencies]

@@ -51,6 +51,11 @@ local NametagComponentSettings = Rocomponents.ComponentSettings.extend({
 -- The actual component we will be using!
 local NametagComponent = Rocomponents.Component.extend("Nametag", NametagComponentSettings)
 
+-- The initialization function!
+function NametagComponent:init()
+	print("Woah... a nametag component was created o.O")
+end
+
 -- Add the nametag gui to the instance the component is binded to!
 function NametagComponent:onBinded(instance)
 	local arguments = self:getArguments()
