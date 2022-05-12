@@ -108,12 +108,11 @@ return {
 			},
 			[Super] = (validExtendingFrom and extendingFrom or nil)
 		}
-		newComponent.__index = newComponent
 		
 		if validExtendingFrom then
-			setmetatable(newComponent, extendingFrom)
+			setmetatable(newComponent, { __index = extendingFrom })
 		else
-			setmetatable(newComponent, Component)
+			setmetatable(newComponent, { __index = Component })
 		end
 		
 		function newComponent.new(arguments)
@@ -134,7 +133,7 @@ return {
 				return
 			end
 			
-			local self = setmetatable({}, newComponent)
+			local self = setmetatable({}, { __index = newComponent })
 
 			self[InternalComponentData].arguments = arguments
 
@@ -144,7 +143,7 @@ return {
 			return self
 		end
 		
-		return newComponent	
+		return newComponent
 	end,
 	
 	[Type.InternalFunctions] = {
