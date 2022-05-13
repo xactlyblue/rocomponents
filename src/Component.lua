@@ -149,8 +149,15 @@ return {
 	[Type.InternalFunctions] = {
 		__bind = function(self, name)
 			local internalComponentData = self[InternalComponentData]
-		end,
+			internalComponentData.lifetimePoint = ComponentLifetime.Binding
 
+			internalComponentData.bindedTo = instance
+			internalComponentData.isBinded = true
+
+			internalComponentData.lifetimePoint = ComponentLifetime.Idle
+
+			self:onBinded(instance)
+		end,
 		__unbind = function(self, name)
 			local internalComponentData = self[InternalComponentData]
 			
