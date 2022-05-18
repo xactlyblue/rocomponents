@@ -147,7 +147,7 @@ return {
 	end,
 	
 	[Type.InternalFunctions] = {
-		__bind = function(self, name, instance)
+		__bind = function(self, instance)
 			local internalComponentData = self[InternalComponentData]
 			internalComponentData.lifetimePoint = ComponentLifetime.Binding
 
@@ -158,7 +158,7 @@ return {
 
 			self:onBinded(instance)
 		end,
-		__unbind = function(self, name)
+		__unbind = function(self)
 			local internalComponentData = self[InternalComponentData]
 			
 			internalComponentData.lifetimePoint = ComponentLifetime.Unbinding
@@ -167,7 +167,7 @@ return {
 			self:cleanup()
 		end,
 
-		__cleanup = function(self, name)
+		__cleanup = function(self)
 			return self:cleanup()
 		end
 	}		
