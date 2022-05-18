@@ -147,7 +147,7 @@ return {
 	end,
 	
 	[Type.InternalFunctions] = {
-		__bind = function(self, name)
+		__bind = function(self, name, instance)
 			local internalComponentData = self[InternalComponentData]
 			internalComponentData.lifetimePoint = ComponentLifetime.Binding
 
